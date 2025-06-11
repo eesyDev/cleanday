@@ -9,13 +9,15 @@ import {
     NavigationMenuTrigger,
     NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
+import { Button } from '../ui/button';
+import { LogInIcon } from 'lucide-react';
 
 const Header = () => {
     return (
         <header className='header py-6'>
             <div className="container">
-                <div className="flex justify-between bg-testblue">
-                    <div className="header__logo text-4xl font-bold">
+                <div className="flex justify-between bg-testblue items-center">
+                    <div className="header__logo text-3xl font-bold">
                         <Link href="/" className="header__logo-link">
                             CleanDay
                         </Link>
@@ -26,7 +28,7 @@ const Header = () => {
                                 <NavigationMenuItem>
                                     <NavigationMenuTrigger className='uppercase font-bold'>Уборка</NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                        <ul className="grid min-w-[200px] gap-4">
+                                        <ul className="grid min-w-[200px] gap-2">
                                             <li>
                                                 <NavigationMenuLink asChild>
                                                     <Link href="#">Поддерживающая уборка</Link>
@@ -53,7 +55,7 @@ const Header = () => {
                                 <NavigationMenuItem>
                                     <NavigationMenuTrigger className='uppercase font-bold'>Чистка</NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                        <ul className="grid gap-4 min-w-[200px]">
+                                        <ul className="grid gap-2 min-w-[200px]">
                                             <li>
                                                 <NavigationMenuLink asChild>
                                                     <Link href="#">Кондиционеры</Link>
@@ -76,7 +78,17 @@ const Header = () => {
                             
                         </NavigationMenu>
                     </div>
-                    <div className="header__actions"></div>
+                    <div className="header__actions flex gap-6">
+                        <Button variant="ghost" asChild>
+                            <Link href="/auth/login">
+                                Войти
+                                <LogInIcon className='w-[18px]'/>
+                            </Link>
+                        </Button>
+                        <Button>
+                            Заказать уборку
+                        </Button>
+                    </div>
                 </div>
             </div>
         </header>
