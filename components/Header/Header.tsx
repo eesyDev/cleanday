@@ -14,78 +14,81 @@ import { LogInIcon } from 'lucide-react';
 
 const Header = () => {
     return (
-        <header className='header py-6'>
+        <header className='header py-6 z-50 relative'>
             <div className="container">
                 <div className="flex justify-between bg-testblue items-center">
-                    <div className="header__logo text-3xl font-bold">
-                        <Link href="/" className="header__logo-link">
-                            CleanDay
-                        </Link>
+                    <div className="header__left flex gap-8 items-center">
+                        <div className="header__logo text-3xl">
+                            <Link href="/" className="header__logo-link font-bold">
+                                CleanDay
+                            </Link>
+                        </div>
+                        <div className="header__menu">
+                            <NavigationMenu className='relative' viewport={false}>
+                                <NavigationMenuList className='gap-4'>
+                                    <NavigationMenuItem>
+                                        <NavigationMenuTrigger className=''>Уборка</NavigationMenuTrigger>
+                                        <NavigationMenuContent>
+                                            <ul className="grid min-w-[200px] gap-2">
+                                                <li>
+                                                    <NavigationMenuLink asChild>
+                                                        <Link href="#">Поддерживающая уборка</Link>
+                                                    </NavigationMenuLink>
+                                                </li>
+                                                <li>
+                                                    <NavigationMenuLink asChild>
+                                                        <Link href="#">Генеральная уборка</Link>
+                                                    </NavigationMenuLink>
+                                                </li>
+                                                <li>
+                                                    <NavigationMenuLink asChild>
+                                                        <Link href="#">Уборка после ремонта</Link>
+                                                    </NavigationMenuLink>
+                                                </li>
+                                            </ul>
+                                        </NavigationMenuContent>
+                                    </NavigationMenuItem>
+                                    <NavigationMenuItem>
+                                        <NavigationMenuLink asChild>
+                                            <Link href="/docs" className=''>Химчистка</Link>
+                                        </NavigationMenuLink>
+                                    </NavigationMenuItem>
+                                    <NavigationMenuItem>
+                                        <NavigationMenuTrigger className=''>Чистка</NavigationMenuTrigger>
+                                        <NavigationMenuContent>
+                                            <ul className="grid gap-2 min-w-[200px]">
+                                                <li>
+                                                    <NavigationMenuLink asChild>
+                                                        <Link href="#">Кондиционеры</Link>
+                                                    </NavigationMenuLink>
+                                                </li>
+                                                <li>
+                                                    <NavigationMenuLink asChild>
+                                                        <Link href="#">Окна</Link>
+                                                    </NavigationMenuLink>
+                                                </li>
+                                            </ul>
+                                        </NavigationMenuContent>
+                                    </NavigationMenuItem>
+                                    <NavigationMenuItem>
+                                        <NavigationMenuLink asChild>
+                                            <Link href="/docs" className=''>О нас</Link>
+                                        </NavigationMenuLink>
+                                    </NavigationMenuItem>
+                                </NavigationMenuList>
+
+                            </NavigationMenu>
+                        </div>
                     </div>
-                    <div className="header__menu">
-                        <NavigationMenu className='relative' viewport={false}>
-                            <NavigationMenuList className='gap-4'>
-                                <NavigationMenuItem>
-                                    <NavigationMenuTrigger className='uppercase font-bold'>Уборка</NavigationMenuTrigger>
-                                    <NavigationMenuContent>
-                                        <ul className="grid min-w-[200px] gap-2">
-                                            <li>
-                                                <NavigationMenuLink asChild>
-                                                    <Link href="#">Поддерживающая уборка</Link>
-                                                </NavigationMenuLink>
-                                            </li>
-                                            <li>
-                                                <NavigationMenuLink asChild>
-                                                    <Link href="#">Генеральная уборка</Link>
-                                                </NavigationMenuLink>
-                                            </li>
-                                            <li>
-                                                <NavigationMenuLink asChild>
-                                                    <Link href="#">Уборка после ремонта</Link>
-                                                </NavigationMenuLink>
-                                            </li>
-                                        </ul>
-                                    </NavigationMenuContent>
-                                </NavigationMenuItem>
-                                <NavigationMenuItem>
-                                    <NavigationMenuLink asChild>
-                                        <Link href="/docs" className='uppercase font-bold'>Химчистка</Link>
-                                    </NavigationMenuLink>
-                                </NavigationMenuItem>
-                                <NavigationMenuItem>
-                                    <NavigationMenuTrigger className='uppercase font-bold'>Чистка</NavigationMenuTrigger>
-                                    <NavigationMenuContent>
-                                        <ul className="grid gap-2 min-w-[200px]">
-                                            <li>
-                                                <NavigationMenuLink asChild>
-                                                    <Link href="#">Кондиционеры</Link>
-                                                </NavigationMenuLink>
-                                            </li>
-                                            <li>
-                                                <NavigationMenuLink asChild>
-                                                    <Link href="#">Окна</Link>
-                                                </NavigationMenuLink>
-                                            </li>
-                                        </ul>
-                                    </NavigationMenuContent>
-                                </NavigationMenuItem>
-                                <NavigationMenuItem>
-                                    <NavigationMenuLink asChild>
-                                        <Link href="/docs" className='uppercase font-bold'>О нас</Link>
-                                    </NavigationMenuLink>
-                                </NavigationMenuItem>
-                            </NavigationMenuList>
-                            
-                        </NavigationMenu>
-                    </div>
-                    <div className="header__actions flex gap-6">
-                        <Button variant="ghost" asChild>
+
+                    <div className="header__actions flex gap-6 items-center">
+                        <Button variant="ghost" asChild className='h-[45px]  font-medium cursor-pointer'>
                             <Link href="/auth/login">
                                 Войти
-                                <LogInIcon className='w-[18px]'/>
+                                <LogInIcon className='w-[18px]' />
                             </Link>
                         </Button>
-                        <Button>
+                        <Button className='h-[45px]  font-medium cursor-pointer'>
                             Заказать уборку
                         </Button>
                     </div>
