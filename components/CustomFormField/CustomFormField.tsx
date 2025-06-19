@@ -10,7 +10,7 @@ import {
 import { Input } from "../ui/input";
 
 const RenderField = ({ field, props } : { field: any, props: RenderFieldProps }) => {
-	switch (field.fieldType) {
+	switch (props.fieldType) {
 		case FormFieldType.INPUT:
 			return (
 				<div className="flex rounded-md border border-dark-500 bg-dark-400">
@@ -23,11 +23,14 @@ const RenderField = ({ field, props } : { field: any, props: RenderFieldProps })
 					</FormControl>
 				</div>
 			)
+		default:
+			console.log(`Unsupported field type: ${props.fieldType}`);
+      		return null;
 	}
 }
 
 const CustomFormField = (props: RenderFieldProps) => {
-	const { control, name, fieldType, label, placeholder, iconSrc, iconAlt } = props;
+	const { control, name, fieldType, label } = props;
   return (
     <FormField
 			control={control}

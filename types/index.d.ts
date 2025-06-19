@@ -12,3 +12,9 @@ declare interface RenderFieldProps {
 	children?: React.ReactNode,
 	renderSkeleton?: (field: any) => React.ReactNode
 }
+
+declare interface SubmitButtonProps {
+    isLoading: boolean,
+    className?: string,
+    children: React.ReactNode
+}
