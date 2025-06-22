@@ -49,7 +49,7 @@ const CalculateLayer = () => {
 							name="phone"
 							placeholder="+7 (999) 999-99-99"
 						/>
-						<SubmitButton isLoading={isLoading}>Рассчитать</SubmitButton>
+						<SubmitButton isLoading={isLoading}>Рассчитать стоимость</SubmitButton>
 					</div>
 				</form>
 			</Form>

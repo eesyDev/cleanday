@@ -6,3 +6,9 @@ export const OrderFormValidation = z.object({
     phone: z.string().refine((phone) => /^\+\d{10,15}$/.test(phone), "Invalid phone number")
 
   });
+
+  export const SimpleFormValidation = z.object({
+    name: z.string().min(1, "Name must be at least 1 character long"),
+    phone: z.string().refine((phone) => /^\+\d{10,15}$/.test(phone), "Invalid phone number")
+
+  });
