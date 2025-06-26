@@ -37,7 +37,7 @@ const CalculateLayer = () => {
 	  }
 	return (
 		<div className='bg-white shadow-md p-8 rounded-md mt-16'>
-			<h2 className="text-2xl font-bold text-center">Рассчитайте стоимость уборки</h2>
+			<h2 className="text-3xl font-bold text-center">Рассчитайте стоимость уборки</h2>
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
 					<div className="flex mt-8 gap-4" >
@@ -49,7 +49,7 @@ const CalculateLayer = () => {
 							name="phone"
 							placeholder="+7 (999) 999-99-99"
 						/>
-						<SubmitButton isLoading={isLoading}>Рассчитать</SubmitButton>
+						<SubmitButton isLoading={isLoading}>Рассчитать стоимость</SubmitButton>
 					</div>
 				</form>
 			</Form>

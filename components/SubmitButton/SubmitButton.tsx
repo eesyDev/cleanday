@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SubmitButton = ({ isLoading, className, children } : SubmitButtonProps) => {
   return (
-    <Button type="submit" disabled={isLoading} className={className ?? 'shad-primary-btn flex-1'}>
+    <Button type="submit" disabled={isLoading} className={className ?? 'shad-primary-btn flex-1 font-bold'}>
         {isLoading ? (
         <div className="flex items-center gap-4">
           <Image
@@ -13,7 +13,7 @@ const SubmitButton = ({ isLoading, className, children } : SubmitButtonProps) =>
             height={24}
             className="animate-spin"
           />
-          Loading...
+          Загрузка...
         </div>
       ) : (
         children

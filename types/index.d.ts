@@ -18,3 +18,25 @@ declare interface SubmitButtonProps {
     className?: string,
     children: React.ReactNode
 }
+
+declare interface IncludesListProps {
+	title: string,
+	subtitle?: string,
+	itemsList: Array<IncludesListItem>,
+}
+
+declare interface IncludesListItemProps {
+	title: string,
+	description?: string,
+	imageSrc?: string,
+	imageAlt?: string,
+	includes?: Array<IncludesItem>,
+	excludes?: Array<IncludesItem>
+}
+
+declare interface IncludesItem {
+	id: string,
+	title: string,
+	description?: string,
+	price?: string,
+}
